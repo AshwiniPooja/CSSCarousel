@@ -1,0 +1,106 @@
+.right-button {
+  float: right;
+  cursor: pointer !important;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 999;
+  width: 100px;
+  height: 50px;
+  background-color: darkmagenta;
+}
+
+.left-button {
+  cursor: pointer !important;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 999;
+  width: 100px;
+  height: 50px;
+  background-color: darkmagenta;
+}
+
+.component-container {
+  width: 100%;
+  height: 120vh;
+  overflow: hidden;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  z-index: 0;
+}
+
+.left {
+  position: relative;
+  animation: slideLeftNone 1s;
+  opacity: 0;
+  left:-100%;
+  top:0;
+}
+
+.left-active {
+  position: relative;
+  opacity: 1;
+  animation: slideLeftBlock 1s;
+  top:0;
+  left: 0%;
+}
+
+.right {
+  position: relative;
+  animation: slideRightNone 1s;
+  opacity: 0;
+  left:100%;
+  top:0;
+}
+
+.right-active {
+  position: relative;
+  opacity: 1;
+  animation: slideRightBlock 1s;
+  left:0%;
+  top:0;
+}
+
+@keyframes slideLeftNone {
+  from {
+    left: 0%; opacity: 1;
+  }
+
+  to {
+    left: -100%; opacity: 0;
+  }
+}
+
+@keyframes slideRightNone {
+    from {
+      left: 0%; opacity:1;
+    }
+  
+    to {
+      left: 100%; opacity:0;
+    }
+  }
+
+@keyframes slideRightBlock {
+    from {
+      left: -100%;
+    }
+  
+    to {
+      left: 0%;
+    }
+}
+  
+@keyframes slideLeftBlock {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: 0%;
+  }
+}
+
+

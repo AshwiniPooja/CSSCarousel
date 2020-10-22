@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="col-md-12">
+        <button class="right-button" (click)="moveRight()">Right</button>
+        <button class="left-button" (click)="moveLeft()">Left</button>
+
+        <div *ngIf="isRefresh" class="component-container">
+            <app-component1></app-component1>
+        </div>
+
+        <div *ngIf="buttonClicked==='left'" class="component-container">
+            <app-component1 [ngClass]="{'left-active':!isLeft,'left':isLeft}"></app-component1>
+        </div>
+        <div *ngIf="buttonClicked==='left'" class="component-container">
+            <app-component2 [ngClass]="{'left-active':isLeft,'left':!isLeft}"></app-component2>
+        </div>
+
+        <div *ngIf="buttonClicked==='right'" class="component-container">
+            <app-component1 [ngClass]="{'right-active':isRight,'right':!isRight}"></app-component1>
+        </div>
+        <div *ngIf="buttonClicked==='right'" class="component-container">
+            <app-component2 [ngClass]="{'right-active':!isRight,'right':isRight}"></app-component2>
+        </div>
+    </div>
+</div>
+
